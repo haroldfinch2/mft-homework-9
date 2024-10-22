@@ -1,0 +1,1082 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+/* -------- FONTS --------- */
+@font-face {
+    font-family: hoefler;
+    src: url(./fonts/ufonts.com_hoefler-text.ttf);
+}
+/* -------- FONTS --------- */
+
+
+@media screen and (min-width:1440px) {
+    input[name="menu"]{
+        display: none;
+    }
+
+    aside{
+        display: none;
+    }
+
+    label{
+        display: none;
+    }
+
+    header{
+        width: 100%;
+        height: 4rem;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        z-index: 100;
+    }
+    
+    .logo{
+        width: 20%;
+        color: #509B7C;
+        display: flex;
+        padding-left: 20px;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .logo>i{
+        font-size: 3rem;
+    }
+    
+    .logo>h1{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+    
+    nav{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    nav>ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+    }
+    
+    nav>ul>li{
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+    
+    nav>ul>li:hover{
+        overflow: visible;
+    }
+    
+    nav>ul>li>a{
+        color: #767977;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        transition: all 0.3s;
+        pointer-events: auto;
+    }
+    
+    nav>ul>li>a:hover{
+        color: white;
+    }
+    
+    .gallery-dropdown{
+        height: 16rem;
+        position: absolute;
+        top: 100%;
+        background-color: black;
+        width: 12rem;
+        border-radius: 5px;
+        z-index: 1;
+        overflow: hidden;
+        z-index: 100;
+    }
+    .gallery-dropdown>ul{
+        height: 100%;
+        padding-top: 20px;
+    }
+    
+    .gallery-dropdown>ul>li{
+        background-color: black;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    
+    .gallery-dropdown>ul>li:hover{
+        background-color: #272727;
+    }
+    
+    .gallery-dropdown>ul>li:hover>a{
+        color: white;
+    }
+    
+    .gallery-dropdown>ul>li>a{
+        color: #767977;
+        padding: 0.5rem 1.2rem;
+        display: inline-block;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        transition: all 0.3s;
+    }
+    
+    .gallery-dropdown>ul>li>a:hover{
+        color: white;
+    }
+    
+    .social-media{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        cursor: pointer;
+    }
+    
+    .icon{
+        color: #767977;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+    }
+    
+    .icon:hover{
+        color: white;
+    }
+    
+    main{
+        width: 100%;
+        height: auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .text-section{
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+    
+    .main-text{
+        text-align: center;
+        font-family: hoefler;
+        font-size: 1.5rem;
+        padding: 0 300px;
+    }
+    
+    .main-text>h1>span{
+        position: relative;
+        z-index: 2;
+    }
+    
+    .main-text>h1>span::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2rem;
+        background-color: #509B7C;
+        z-index: -1;
+        top: 55%;
+        left: 5%;
+    }
+    
+    .main-text>p{
+        margin-top: 2rem;
+        font-size: 1rem;
+        color: #767977;
+        padding: 0 8rem;
+    }
+    
+    .main-text>button{
+        margin-top: 2rem;
+        border: none;
+        width: 15rem;
+        height: 3rem;
+        border-radius: 5px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.1rem;
+        background-color: #509B7C;
+        cursor: pointer;
+    }
+    
+    .photos{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 30px; 
+        padding: 30px;
+    }
+    
+    .photo{
+        position: relative;
+        transition: all 0.3s;
+    }
+    
+    .photo:hover>.icon-1{
+        display: block;
+    }
+    
+    .photo:hover>.icon-2{
+        display: block;
+    }
+    
+    .photo:hover>img{
+        filter: brightness(0.5);
+    }
+    
+    .photo>img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        filter: brightness(1);
+        transition: all 0.3s;
+    }
+    .icon-1{
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        display: none;
+        transition: all 0.3s;
+    }
+    
+    .icon-2{
+        position: absolute;
+        top: 50%;
+        right: 40%;
+        display: none;
+        transition: all 0.3s;
+    }
+    
+    .grid-icon{
+        color: #767977;
+        cursor: pointer;
+    }
+    
+    .grid-icon:hover{
+        color: white;
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width:1440px) {
+    
+    input[name="menu"]{
+        display: none;
+    }
+    
+    aside{
+        display: none;
+    }
+    label{
+        display: none;
+    }
+    header {
+        width: 100%;
+        height: 4rem;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        z-index: 100;
+    }
+    
+    .logo {
+        width: 20%;
+        color: #509B7C;
+        display: flex;
+        padding-left: 20px;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .logo>i {
+        font-size: 2.5rem;
+    }
+    
+    .logo>h1 {
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+    
+    nav {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    nav>ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+    }
+    
+    nav>ul>li {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+    
+    nav>ul>li:hover {
+        overflow: visible;
+    }
+    
+    nav>ul>li>a {
+        color: #767977;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        transition: all 0.3s;
+        pointer-events: auto;
+    }
+    
+    nav>ul>li>a:hover {
+        color: white;
+    }
+    
+    .gallery-dropdown {
+        height: 16rem;
+        position: absolute;
+        top: 100%;
+        background-color: black;
+        width: 12rem;
+        border-radius: 5px;
+        z-index: 1;
+        overflow: hidden;
+        z-index: 100;
+    }
+    
+    .gallery-dropdown>ul {
+        height: 100%;
+        padding-top: 20px;
+    }
+    
+    .gallery-dropdown>ul>li {
+        background-color: black;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    
+    .gallery-dropdown>ul>li:hover {
+        background-color: #272727;
+    }
+    
+    .gallery-dropdown>ul>li:hover>a {
+        color: white;
+    }
+    
+    .gallery-dropdown>ul>li>a {
+        color: #767977;
+        padding: 0.5rem 1.2rem;
+        display: inline-block;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        transition: all 0.3s;
+    }
+    
+    .gallery-dropdown>ul>li>a:hover {
+        color: white;
+    }
+    
+    .social-media {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        cursor: pointer;
+    }
+    
+    .icon {
+        color: #767977;
+        font-size: 1rem;
+        transition: all 0.3s;
+    }
+    
+    .icon:hover {
+        color: white;
+    }
+    
+    main {
+        width: 100%;
+        height: auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .text-section {
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+    
+    .main-text {
+        text-align: center;
+        font-family: hoefler;
+        font-size: 1.3rem;
+        padding: 0 200px;
+    }
+    
+    .main-text>h1>span {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .main-text>h1>span::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1.8rem;
+        background-color: #509B7C;
+        z-index: -1;
+        top: 55%;
+        left: 5%;
+    }
+    
+    .main-text>p {
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        color: #767977;
+        padding: 0 6rem;
+    }
+    
+    .main-text>button {
+        margin-top: 2rem;
+        border: none;
+        width: 13rem;
+        height: 2.8rem;
+        border-radius: 5px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        background-color: #509B7C;
+        cursor: pointer;
+    }
+    
+    .photos {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 25px;
+        padding: 25px;
+    }
+    
+    .photo {
+        position: relative;
+        transition: all 0.3s;
+    }
+    
+    .photo:hover>.icon-1 {
+        display: block;
+    }
+    
+    .photo:hover>.icon-2 {
+        display: block;
+    }
+    
+    .photo:hover>img {
+        filter: brightness(0.5);
+    }
+    
+    .photo>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        filter: brightness(1);
+        transition: all 0.3s;
+    }
+    
+    .icon-1 {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        display: none;
+        transition: all 0.3s;
+    }
+    
+    .icon-2 {
+        position: absolute;
+        top: 50%;
+        right: 40%;
+        display: none;
+        transition: all 0.3s;
+    }
+    
+    .grid-icon {
+        color: #767977;
+        cursor: pointer;
+    }
+    
+    .grid-icon:hover {
+        color: white;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+    input[name="menu"]{
+        display: none;
+    }
+
+    aside{
+        display: none;
+    }
+
+    label{
+        display: none;
+    }
+
+    header {
+        width: 100%;
+        height: 4rem;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        z-index: 100;
+    }
+    
+    .logo {
+        width: 25%;
+        color: #509B7C;
+        display: flex;
+        padding-left: 15px;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .logo>i {
+        font-size: 2rem;
+    }
+    
+    .logo>h1 {
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        font-size: 1.2rem;
+    }
+    
+    nav {
+        width: 55%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    nav>ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+    }
+    
+    nav>ul>li {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+    
+    nav>ul>li:hover {
+        overflow: visible;
+    }
+    
+    nav>ul>li>a {
+        color: #767977;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        transition: all 0.3s;
+        pointer-events: auto;
+    }
+    
+    nav>ul>li>a:hover {
+        color: white;
+    }
+    
+    .gallery-dropdown {
+        height: 14rem;
+        position: absolute;
+        top: 100%;
+        background-color: black;
+        width: 10rem;
+        border-radius: 5px;
+        z-index: 1;
+        overflow: hidden;
+        z-index: 100;
+    }
+    
+    .gallery-dropdown>ul {
+        height: 100%;
+        padding-top: 15px;
+    }
+    
+    .gallery-dropdown>ul>li {
+        background-color: black;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    
+    .gallery-dropdown>ul>li:hover {
+        background-color: #272727;
+    }
+    
+    .gallery-dropdown>ul>li:hover>a {
+        color: white;
+    }
+    
+    .gallery-dropdown>ul>li>a {
+        color: #767977;
+        padding: 0.4rem 1rem;
+        display: inline-block;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        transition: all 0.3s;
+    }
+    
+    .gallery-dropdown>ul>li>a:hover {
+        color: white;
+    }
+    
+    .social-media {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+    
+    .icon {
+        color: #767977;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    }
+    
+    .icon:hover {
+        color: white;
+    }
+    
+    main {
+        width: 100%;
+        height: auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .text-section {
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+    
+    .main-text {
+        text-align: center;
+        font-family: hoefler;
+        font-size: 1.1rem;
+        padding: 0 150px;
+    }
+    
+    .main-text>h1>span {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .main-text>h1>span::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1.5rem;
+        background-color: #509B7C;
+        z-index: -1;
+        top: 50%;
+        left: 5%;
+    }
+    
+    .main-text>p {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+        color: #767977;
+        padding: 0 5rem;
+    }
+    
+    .main-text>button {
+        margin-top: 1.5rem;
+        border: none;
+        width: 12rem;
+        height: 2.5rem;
+        border-radius: 5px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.9rem;
+        background-color: #509B7C;
+        cursor: pointer;
+    }
+    
+    .photos {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .photo {
+        position: relative;
+        transition: all 0.3s;
+    }
+    
+    .photo:hover>.icon-1 {
+        display: block;
+    }
+    
+    .photo:hover>.icon-2 {
+        display: block;
+    }
+    
+    .photo:hover>img {
+        filter: brightness(0.5);
+    }
+    
+    .photo>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        filter: brightness(1);
+        transition: all 0.3s;
+    }
+    
+    .icon-1 {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        display: none;
+        transition: all 0.3s;
+    }
+    
+    .icon-2 {
+        position: absolute;
+        top: 50%;
+        right: 35%;
+        display: none;
+        transition: all 0.3s;
+    }
+    
+    .grid-icon {
+        color: #767977;
+        cursor: pointer;
+    }
+    
+    .grid-icon:hover {
+        color: white;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:768px) {
+    input[name="menu"]{
+        display: none;
+    }
+
+    
+    aside{
+        width: 50%;
+        height: 100svh;
+        background-color: #272727;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+    }
+
+    aside>ul>li{
+        display: flex;
+    }
+
+    aside>ul>li>a{
+        color: #767977;
+        margin: 20px;
+    }
+
+    aside>label{
+        font-size: 2rem;
+        color: white;
+    }
+
+    #open-menu:checked ~aside{
+        transform: translateX(0);
+    }
+
+    header {
+        width: 100%;
+        height: 3.5rem;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        z-index: 100;
+    }
+
+    header>label{
+        width: 60%;
+        justify-self: right;
+    }
+
+    .logo {
+        width: 60%;
+        color: #509B7C;
+        display: flex;
+        padding-left: 10px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo>i {
+        font-size: 3rem;
+    }
+
+    .logo>h1 {
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        font-size: 1rem;
+    }
+
+    nav {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        display: none;
+    }
+
+    nav>ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+    }
+
+    nav>ul>li {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+
+    nav>ul>li:hover {
+        overflow: visible;
+    }
+
+    nav>ul>li>a {
+        color: #767977;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        transition: all 0.3s;
+        pointer-events: auto;
+        font-size: 0.8rem;
+    }
+
+    nav>ul>li>a:hover {
+        color: white;
+    }
+
+    .gallery-dropdown {
+        height: 12rem;
+        position: absolute;
+        top: 100%;
+        background-color: black;
+        width: 8rem;
+        border-radius: 5px;
+        z-index: 1;
+        overflow: hidden;
+        z-index: 100;
+    }
+
+    .gallery-dropdown>ul {
+        height: 100%;
+        padding-top: 10px;
+    }
+
+    .gallery-dropdown>ul>li {
+        background-color: black;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .gallery-dropdown>ul>li:hover {
+        background-color: #272727;
+    }
+
+    .gallery-dropdown>ul>li>a {
+        color: #767977;
+        padding: 0.3rem 0.8rem;
+        display: inline-block;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        transition: all 0.3s;
+        font-size: 0.8rem;
+    }
+
+    .gallery-dropdown>ul>li>a:hover {
+        color: white;
+    }
+
+    .social-media {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .icon {
+        color: #767977;
+        font-size: 0.7rem;
+        transition: all 0.3s;
+    }
+
+    .icon:hover {
+        color: white;
+    }
+
+    main {
+        width: 100%;
+        height: auto;
+        background-color: black;
+        color: white;
+    }
+
+    .text-section {
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .main-text {
+        text-align: center;
+        font-family: hoefler;
+        font-size: 1rem;
+        padding: 0 100px;
+    }
+
+    .main-text>h1>span {
+        position: relative;
+        z-index: 2;
+    }
+
+    .main-text>h1>span::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1rem;
+        background-color: #509B7C;
+        z-index: -1;
+        top: 50%;
+        left: 5%;
+    }
+
+    .main-text>p {
+        margin-top: 1.5rem;
+        font-size: 0.7rem;
+        color: #767977;
+        padding: 0 3rem;
+    }
+
+    .main-text>button {
+        margin-top: 1rem;
+        border: none;
+        width: 10rem;
+        height: 2rem;
+        border-radius: 5px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8rem;
+        background-color: #509B7C;
+        cursor: pointer;
+    }
+
+    .photos {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .photo {
+        position: relative;
+        transition: all 0.3s;
+    }
+
+    .photo:hover>.icon-1 {
+        display: block;
+    }
+
+    .photo:hover>.icon-2 {
+        display: block;
+    }
+
+    .photo:hover>img {
+        filter: brightness(0.5);
+    }
+
+    .photo>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        filter: brightness(1);
+        transition: all 0.3s;
+    }
+
+    .icon-1 {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        display: none;
+        transition: all 0.3s;
+    }
+
+    .icon-2 {
+        position: absolute;
+        top: 50%;
+        right: 35%;
+        display: none;
+        transition: all 0.3s;
+    }
+
+    .grid-icon {
+        color: #767977;
+        cursor: pointer;
+    }
+
+    .grid-icon:hover {
+        color: white;
+    }
+}
